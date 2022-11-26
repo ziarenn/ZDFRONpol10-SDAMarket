@@ -10,3 +10,8 @@ export interface RegisterFormData extends LoginFormData {
 export interface State {
   authState: boolean;
 }
+
+export interface InitialState {
+  fetchedCategories: string[] | [];
+  // ten interface bedzie sie rozwijac
+}

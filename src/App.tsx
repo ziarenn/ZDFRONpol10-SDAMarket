@@ -7,6 +7,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { setAuthState } from "./redux/actions/authActions";
 import { auth } from "./helpers/firebaseConfig";
+import HomePage from "./components/HomePage/HomePage";
 function App() {
   const dispatch = useDispatch();
   onAuthStateChanged(auth, (user) => {
@@ -24,7 +25,7 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<h1>Home page</h1>} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
         </Routes>
