@@ -27,7 +27,7 @@ const HomePage = () => {
         Browse and buy your favorite electronics, jewellery and clothes. All in
         one place.
       </Typography>
-      <CategoryMenu categories={categories} />
+      {categories.length > 1 && <CategoryMenu categories={categories} />}
       <Typography
         variant="h3"
         align="center"

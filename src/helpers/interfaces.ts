@@ -19,4 +19,5 @@ export interface InitialState {
 
 export interface ProductState {
   fetchedCategories: string[] | [];
+  fetchedImages: string[] | [];
 }

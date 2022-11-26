@@ -25,17 +25,8 @@ export const fetchCategories = (): ThunkAction<
 // 1. Funkcja otypowana w odpowiedni sposób(przykład powyżej)
 // 2. Funkcja zwracająca inną funkcję asynchroniczną. Ta funkcja asynchroniczna z automatu ma dostęp do funkcji dispatch w swoim parametrze. W środku funkcji asynchronicznej wykonujemy interesujące nas operacje (zazwyczaj jakiś fetch) i dispatchujemy pozyskane dane dalej.
 
-export const fetchImages = (
-  categories: string[]
-): ThunkAction<void, InitialState, unknown, AnyAction> => {
-  return async (dispatch) => {
-    const productList = await fetchImagesSeparately(categories);
-    const imageList = productList.map((el) => el.data[0].image);
-    dispatch({ type: ActionTypes.FETCH_IMAGES, payload: imageList });
-  };
-};
-
 const fetchImagesSeparately = async (categories: string[]) => {
+  console.log(categories);
   const product1 = await axios.get(
     `https://fakestoreapi.com/products/category/${categories[0]}?limit=1`
   );
@@ -49,6 +40,16 @@ const fetchImagesSeparately = async (categories: string[]) => {
     `https://fakestoreapi.com/products/category/${categories[3]}?limit=1`
   );
   const objectList = [product1, product2, product3, product4];
-
+  console.log(objectList);
   return objectList;
+};
+
+export const fetchImages = (
+  categories: string[]
+): ThunkAction<void, InitialState, string[], AnyAction> => {
+  return async (dispatch) => {
+    const productList = await fetchImagesSeparately(categories);
+    const imageList = productList.map((el) => el.data[0].image);
+    dispatch({ type: ActionTypes.FETCH_IMAGES, payload: imageList });
+  };
 };
