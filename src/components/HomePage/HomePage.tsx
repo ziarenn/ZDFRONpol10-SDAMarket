@@ -1,7 +1,22 @@
 import { Typography } from "@mui/material";
-import React from "react";
-
+import { useEffect } from "react";
+import { useAppDispatch } from "../../redux/store";
+import { fetchCategories } from "../../redux/actions/productActions";
+import { ThunkDispatch } from "redux-thunk";
+import { AnyAction } from "redux";
+import { InitialState, State } from "../../helpers/interfaces";
+import CategoryMenu from "../CategoryMenu/CategoryMenu";
+import { useSelector } from "react-redux";
 const HomePage = () => {
+  const dispatch = useAppDispatch();
+  const categories = useSelector(
+    (state: State) => state.productState.fetchedCategories
+  );
+  useEffect(() => {
+    dispatch(
+      fetchCategories() as ThunkDispatch<InitialState, unknown, AnyAction>
+    );
+  }, []);
   return (
     <>
       <Typography
@@ -12,7 +27,7 @@ const HomePage = () => {
         Browse and buy your favorite electronics, jewellery and clothes. All in
         one place.
       </Typography>
-      {/* CategoryMenu */}
+      <CategoryMenu categories={categories} />
       <Typography
         variant="h3"
         align="center"

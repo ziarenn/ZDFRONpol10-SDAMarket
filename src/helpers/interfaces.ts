@@ -9,9 +9,14 @@ export interface RegisterFormData extends LoginFormData {
 
 export interface State {
   authState: boolean;
+  productState: ProductState;
 }
 
 export interface InitialState {
   fetchedCategories: string[] | [];
-  // ten interface bedzie sie rozwijac
+  fetchedImages: string[] | [];
+}
+
+export interface ProductState {
+  fetchedCategories: string[] | [];
 }
