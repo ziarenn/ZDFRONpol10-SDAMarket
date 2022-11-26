@@ -25,13 +25,3 @@ const CategoryTile: React.FC<CategoryTileProps> = ({ category, image }) => {
 };
 
 export default CategoryTile;
-// CATEOGORYMENU
-// 3. Ściągnij liste fetchedImages ze store przy pomocy useSelector
-// 4. JSX:
-// - całość obiwnięta w komponent Paper (MUI) elevation 1, sx: my 2rem
-// - w środku renderowanie warunkowe + renderowanie w pętli
-// Jeżeli lista obrazków z pkt 3 nie jest pusta to odpal map na liście categories
-// W mapie wyświetlaj komponent CategoryTile, przekaż tam odpowiednie propsy, tj. category (pierwszy parametr mapa) i image odpowiednio według indexów
-// categories.map((category, i) => {
-//     return komponent props1 image={images[i]}
-// })
