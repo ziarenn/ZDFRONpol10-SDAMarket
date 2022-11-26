@@ -1,7 +1,10 @@
 import React from "react";
 import { AppBar, Box, Toolbar, Typography, Button } from "@mui/material";
 import { Link } from "react-router-dom";
+import { State } from "../../helpers/interfaces";
+import { useSelector } from "react-redux";
 const Navbar = () => {
+  const loggedIn = useSelector((state: State) => state.authState);
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ backgroundColor: "orange" }}>
@@ -68,6 +71,8 @@ const Navbar = () => {
             </Button>
           </Link>
           <Link to="/login" style={{ textDecoration: "none", color: "white" }}>
+            {/* 1. Jeżeli stan authState jest równa true, w tym Buttonie wyświetl napis Log out, jeżeli stan authState jest równy false, wyświetl napis Log in.  */}
+            {/* 2. Jeżeli stan authState jest równy true, to na kliknięcie tego przycisku użytkownik powinien być wylogowywany (wywołanie funkcji signOut z firebase/auth, funkcja signOut przyjmuje argument w postaci obiektu auth z firebaseConfig). Jeżeli stan authState jest równy false to nie rób nic na click. */}
             <Button variant="contained" sx={{ backgroundColor: "#FC766AFF" }}>
               LOG IN
             </Button>
