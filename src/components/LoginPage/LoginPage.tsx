@@ -4,7 +4,7 @@ import { Card, Typography, Button, TextField, Paper } from "@mui/material";
 import { Link } from "react-router-dom";
 import { RegisterFormData } from "../../helpers/interfaces";
 import { signInWithEmailAndPassword } from "firebase/auth";
-const auth = {};
+import { auth } from "../../helpers/firebaseConfig";
 const LoginPage = () => {
   const { register, handleSubmit } = useForm<RegisterFormData>();
 
@@ -17,7 +17,7 @@ const LoginPage = () => {
   return (
     <Card
       component={Paper}
-      sx={{ displa: "block", mx: "auto", maxWidth: "35%", my: "1rem" }}
+      sx={{ display: "block", mx: "auto", maxWidth: "35%", my: "1rem" }}
     >
       <Typography variant="h2" align="center" sx={{ fontSize: "2rem" }}>
         Log in to use our site

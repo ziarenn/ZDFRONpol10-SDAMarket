@@ -3,7 +3,7 @@ import { Card, Paper, Typography, TextField, Button } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { RegisterFormData } from "../../helpers/interfaces";
-const auth = {};
+import { auth } from "../../helpers/firebaseConfig";
 const RegisterPage = () => {
   const { register, handleSubmit } = useForm<RegisterFormData>();
 
