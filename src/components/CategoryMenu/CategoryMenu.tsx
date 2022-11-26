@@ -16,14 +16,3 @@ const CategoryMenu = ({ categories }: { categories: string[] | [] }) => {
 };
 
 export default CategoryMenu;
-
-// W PRODUCTSACTIONS.TS:
-// 5. Stwórz kreator akcji asynchronicznej o nazwie fetchImages, do samego kreatora przyjmuj parametr categories
-// W kreatorze:
-// - axiosem pobieracie 4 zdjęcia
-// - stwórz 4 zmienne, product1, product2 itd, w każdej zmiennej (AWAIT!!!!) wywołaj axios get dla urla `https://fakestoreapi.com/products/category/${categories[*jeżeli zmienna product1 to tutaj liczba 1 itd]}?limit=1`
-// - wszystkie zmienne wrzuć do listy objectList
-// const objectList = [product1, product2, product3...]
-// const imageList = objectList.map((el) => el.data[0].image)
-// - wywołaj funkcje dispatch, w środku obiekt akcji, type ActionTypes.FETCH_IMAGES i payload imageList
-// 6. Wywołaj kreator z pkt 5 w useEffect z pkt 4

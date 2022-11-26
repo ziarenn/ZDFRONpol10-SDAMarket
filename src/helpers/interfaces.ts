@@ -21,3 +21,8 @@ export interface ProductState {
   fetchedCategories: string[] | [];
   fetchedImages: string[] | [];
 }
+
+export interface CategoryTileProps {
+  category: string;
+  image: string;
+}
