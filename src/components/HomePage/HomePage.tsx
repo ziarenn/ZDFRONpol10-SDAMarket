@@ -7,6 +7,7 @@ import { AnyAction } from "redux";
 import { InitialState, State } from "../../helpers/interfaces";
 import CategoryMenu from "../CategoryMenu/CategoryMenu";
 import { useSelector } from "react-redux";
+import Bestsellers from "../../Bestsellers/Bestsellers";
 const HomePage = () => {
   const dispatch = useAppDispatch();
   const categories = useSelector(
@@ -40,7 +41,7 @@ const HomePage = () => {
       >
         Our bestsellers:
       </Typography>
-      {/* Bestsellers */}
+      <Bestsellers />
     </>
   );
 };

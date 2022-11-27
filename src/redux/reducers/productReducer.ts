@@ -14,6 +14,8 @@ export const productReducer = (state = initialState, action: AnyAction) => {
       return { ...state, fetchedCategories: action.payload };
     case ActionTypes.FETCH_IMAGES:
       return { ...state, fetchedImages: action.payload };
+    case ActionTypes.FETCH_PRODUCTS:
+      return {...state, fetchedProducts: action.payload}
     default:
       return state;
   }
