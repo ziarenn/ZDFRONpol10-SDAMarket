@@ -5,9 +5,16 @@ import axios from "axios";
 import { ActionTypes } from "../constants/action-types";
 
 export const setProduct = (product: Product) => {
-  console.log(product)
+  console.log(product);
   return {
     type: ActionTypes.SET_PRODUCT,
+    payload: product,
+  };
+};
+
+export const removeProduct = (product: Product) => {
+  return {
+    type: ActionTypes.REMOVE_PRODUCT,
     payload: product,
   };
 };

@@ -5,7 +5,7 @@ const initialState = {
   fetchedCategories: [""],
   fetchedProducts: [],
   fetchedImages: [],
-  selectedProducts: [],
+  selectedProducts: [{ id: 0 }],
 };
 
 export const productReducer = (state = initialState, action: AnyAction) => {
@@ -20,6 +20,17 @@ export const productReducer = (state = initialState, action: AnyAction) => {
       return {
         ...state,
         selectedProducts: [...state.selectedProducts, action.payload],
+      };
+    case ActionTypes.REMOVE_PRODUCT:
+      const indexOfObjectToRemove = state.selectedProducts.findIndex(
+        (productAlreadyInState) =>
+          productAlreadyInState.id === action.payload.id
+      );
+      const copyOfOldSelectedProductsArray = [...state.selectedProducts];
+      copyOfOldSelectedProductsArray.splice(indexOfObjectToRemove, 1);
+      return {
+        ...state,
+        selectedProducts: copyOfOldSelectedProductsArray,
       };
     default:
       return state;

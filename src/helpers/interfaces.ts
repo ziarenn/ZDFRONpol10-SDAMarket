@@ -50,3 +50,8 @@ export interface ProductTileProps {
   product: Product;
   key: number;
 }
+
+export interface CartProductTileProps {
+  product: Product;
+  key: number;
+}
