@@ -12,19 +12,3 @@ export const setAuthState = (authState: boolean) => {
   };
 };
 
-// dispatch({
-//     type: ActionTypes.SET_AUTH_STATE,
-//     payload: jakisStanZKomponentu,
-// }) // przyjmuje obiekt akcji
-// AKCJA == OBIEKT AKCJI
-
-// dispatch(setAuthState(false))
-
-
-// onAuthStateChanged((user)=> {
-//     if (user){
-//         dispatch(setAuthState(true))
-//     } else {
-//         dispatch(setAuthState(false))
-//     }
-// })

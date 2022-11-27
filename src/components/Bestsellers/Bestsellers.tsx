@@ -30,6 +30,3 @@ const Bestsellers = () => {
 };
 
 export default Bestsellers;
-
-// Bestsellers.tsx
-// 4. Dispatch fetchProducts w useEffect z pkt 2, jako argument do fetchProducts podaj liczbę 10

@@ -1,8 +1,16 @@
 import { AnyAction } from "redux";
 import { ThunkAction } from "redux-thunk";
-import { InitialState } from "../../helpers/interfaces";
+import { InitialState, Product } from "../../helpers/interfaces";
 import axios from "axios";
 import { ActionTypes } from "../constants/action-types";
+
+export const setProduct = (product: Product) => {
+  console.log(product)
+  return {
+    type: ActionTypes.SET_PRODUCT,
+    payload: product,
+  };
+};
 
 export const fetchCategories = (): ThunkAction<
   void,
