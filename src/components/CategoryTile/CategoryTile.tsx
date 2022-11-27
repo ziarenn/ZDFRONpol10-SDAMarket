@@ -6,7 +6,7 @@ const CategoryTile: React.FC<CategoryTileProps> = ({ category, image }) => {
     <Card
       sx={{
         display: "inline-block",
-        width: "calc(24%-1px)",
+        width: "calc(24% - 1px)",
         mx: "0.5%",
         height: "45vh",
       }}
