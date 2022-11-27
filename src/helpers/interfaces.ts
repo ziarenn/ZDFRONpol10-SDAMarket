@@ -43,3 +43,8 @@ export interface CategoryTileProps {
   category: string;
   image: string;
 }
+
+export interface ProductTileProps {
+  product: Product;
+  key: number
+}
