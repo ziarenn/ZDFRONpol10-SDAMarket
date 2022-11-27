@@ -12,14 +12,31 @@ export interface State {
   productState: ProductState;
 }
 
+interface ProductRating {
+  rate: number;
+  count: number;
+}
+
+export interface Product {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+  rating: ProductRating;
+}
+
 export interface InitialState {
   fetchedCategories: string[] | [];
   fetchedImages: string[] | [];
+  fetchedProducts: Product[] | [];
 }
 
 export interface ProductState {
   fetchedCategories: string[] | [];
   fetchedImages: string[] | [];
+  fetchedProducts: Product[] | [];
 }
 
 export interface CategoryTileProps {
