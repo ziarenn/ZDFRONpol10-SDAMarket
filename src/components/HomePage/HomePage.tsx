@@ -40,6 +40,7 @@ const HomePage = () => {
       >
         Our bestsellers:
       </Typography>
+      {/* Bestsellers */}
     </>
   );
 };

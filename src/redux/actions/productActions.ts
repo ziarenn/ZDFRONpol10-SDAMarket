@@ -53,3 +53,17 @@ export const fetchImages = (
     dispatch({ type: ActionTypes.FETCH_IMAGES, payload: imageList });
   };
 };
+
+export const fetchProducts = (
+  quantity: number
+): ThunkAction<void, InitialState, number, AnyAction> => {
+  return async (dispatch) => {
+    const response = await axios.get(
+      `https://fakestoreapi.com/products?limit=${quantity}`
+    );
+    dispatch({
+      type: ActionTypes.FETCH_PRODUCTS,
+      payload: response.data,
+    });
+  };
+};
